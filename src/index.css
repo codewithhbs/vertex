@@ -1,0 +1,413 @@
+@import "tailwindcss";
+
+@media (min-width: 768px) {
+  #root {
+    width: 100%;
+    zoom: 0.9;
+  }
+}
+
+html,
+body {
+  overflow-x: clip;
+}
+
+body {
+  color: #1e293b;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+main p:not(.uppercase):not(.text-xl):not(.text-2xl):not(.text-3xl):not(.text-4xl):not(.text-5xl):not(.text-6xl),
+main li:not(.text-xl):not(.text-2xl):not(.text-3xl):not(.text-4xl):not(.text-5xl):not(.text-6xl) {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.75;
+}
+
+@media (min-width: 640px) {
+  main p:not(.uppercase):not(.text-xl):not(.text-2xl):not(.text-3xl):not(.text-4xl):not(.text-5xl):not(.text-6xl),
+  main li:not(.text-xl):not(.text-2xl):not(.text-3xl):not(.text-4xl):not(.text-5xl):not(.text-6xl) {
+    font-size: 1.125rem;
+  }
+}
+
+.text-slate-500,
+.text-slate-600,
+.text-slate-700,
+.text-gray-500,
+.text-gray-600,
+.text-gray-700 {
+  color: #1e293b;
+}
+
+@keyframes contact-bar-scroll {
+  from {
+    transform: translateX(100vw);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.contact-bar {
+  overflow: hidden;
+}
+
+.contact-bar__track {
+  display: flex;
+  width: max-content;
+  animation: contact-bar-scroll 24s linear infinite;
+}
+
+.contact-bar:hover .contact-bar__track,
+.contact-bar:focus-within .contact-bar__track {
+  animation-play-state: paused;
+}
+
+@keyframes testimonial-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.testimonial-marquee {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  outline: none;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.testimonial-marquee:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: -2px;
+}
+
+.testimonial-marquee__group {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: stretch;
+  gap: 1.25rem;
+  padding-right: 1.25rem;
+  animation: testimonial-scroll 55s linear infinite;
+}
+
+.testimonial-marquee:hover .testimonial-marquee__group,
+.testimonial-marquee:focus-within .testimonial-marquee__group,
+.testimonial-marquee.is-paused .testimonial-marquee__group {
+  animation-play-state: paused;
+}
+
+.testimonial-card {
+  width: min(82vw, 370px);
+  flex: 0 0 auto;
+  border: 1px solid #26364c;
+  border-radius: 1rem;
+  background: #111c2e;
+  padding: 1.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-bar__track {
+    animation: none;
+  }
+
+  .contact-bar__track {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .testimonial-marquee {
+    overflow-x: auto;
+  }
+
+  .testimonial-marquee__group {
+    animation: none;
+  }
+}
+
+html[data-theme='dark'] {
+  color-scheme: dark;
+  background-color: #0b1220;
+}
+
+html[data-theme='dark'] body {
+  background-color: #0b1220;
+  color: #e2e8f0;
+}
+
+html[data-theme='dark'] .text-slate-500,
+html[data-theme='dark'] .text-slate-600,
+html[data-theme='dark'] .text-slate-700,
+html[data-theme='dark'] .text-gray-500,
+html[data-theme='dark'] .text-gray-600,
+html[data-theme='dark'] .text-gray-700 {
+  color: #d1dbea !important;
+}
+
+html[data-theme='dark'] .bg-white {
+  background-color: #111c2e !important;
+}
+
+html[data-theme='dark'] .bg-slate-50 {
+  background-color: #0f1a2b !important;
+}
+
+html[data-theme='dark'] .bg-slate-100 {
+  background-color: #1e293b !important;
+}
+
+html[data-theme='dark'] .bg-slate-200 {
+  background-color: #26364c !important;
+}
+
+html[data-theme='dark'] .bg-blue-50 {
+  background-color: #142744 !important;
+}
+
+html[data-theme='dark'] .bg-blue-100 {
+  background-color: #193454 !important;
+}
+
+html[data-theme='dark'] .bg-blue-50\/60,
+html[data-theme='dark'] .bg-blue-50\/70,
+html[data-theme='dark'] .bg-blue-50\/80 {
+  background-color: rgb(20 39 68 / 0.8) !important;
+}
+
+html[data-theme='dark'] .bg-slate-50\/80 {
+  background-color: rgb(15 26 43 / 0.9) !important;
+}
+
+html[data-theme='dark'] .bg-white\/70 {
+  background-color: rgb(17 28 46 / 0.85) !important;
+}
+
+html[data-theme='dark'] .text-slate-950,
+html[data-theme='dark'] .text-slate-900 {
+  color: #f1f5f9 !important;
+}
+
+html[data-theme='dark'] .text-slate-800,
+html[data-theme='dark'] .text-slate-700 {
+  color: #d1dbea !important;
+}
+
+html[data-theme='dark'] .text-slate-600 {
+  color: #aebbd0 !important;
+}
+
+html[data-theme='dark'] .text-slate-500 {
+  color: #94a3b8 !important;
+}
+
+html[data-theme='dark'] .text-blue-900 {
+  color: #b8d5ff !important;
+}
+
+html[data-theme='dark'] .text-blue-800,
+html[data-theme='dark'] .text-blue-700 {
+  color: #8abaff !important;
+}
+
+html[data-theme='dark'] .border-slate-50,
+html[data-theme='dark'] .border-slate-100,
+html[data-theme='dark'] .border-slate-200 {
+  border-color: #26364c !important;
+}
+
+html[data-theme='dark'] .border-blue-50,
+html[data-theme='dark'] .border-blue-100,
+html[data-theme='dark'] .border-blue-200 {
+  border-color: #234b7a !important;
+}
+
+html[data-theme='dark'] section[class*="bg-[#f5f8fc]"],
+html[data-theme='dark'] section[class*="bg-[#f5f7fb]"],
+html[data-theme='dark'] .loyalty-focus-section,
+html[data-theme='dark'] .missing-person-focus-section,
+html[data-theme='dark'] .pre-marriage-focus-section {
+  background-color: #0f1a2b !important;
+}
+
+html[data-theme='dark'] .pre-marriage-privacy-card {
+  background-color: #1e293b;
+}
+
+html[data-theme='dark'] .pre-marriage-privacy-card > div:first-child {
+  background-color: rgb(244 63 94 / 0.12);
+}
+
+html[data-theme='dark'] .pre-marriage-help-card {
+  border-color: #334155;
+  background-color: #1e293b;
+}
+
+html[data-theme='dark'] .pre-marriage-help-card__icon {
+  background-color: #111c2e;
+}
+
+html[data-theme='dark'] .pre-marriage-help-card__title {
+  color: #f1f5f9;
+}
+
+html[data-theme='dark'] .pre-marriage-help-card__description {
+  color: #cbd5e1;
+}
+
+html[data-theme='dark'] .surveillance-focus-section {
+  background-color: #0f1a2b !important;
+}
+
+html[data-theme='dark'] .surveillance-focus-section > div:first-child {
+  background-color: rgb(59 130 246 / 0.08);
+}
+
+html[data-theme='dark'] .surveillance-focus-card {
+  border-color: #334155;
+  background-color: #111c2e !important;
+}
+
+html[data-theme='dark'] .surveillance-focus-card__number {
+  color: #94a3b8;
+}
+
+html[data-theme='dark'] .surveillance-focus-card:hover .surveillance-focus-card__number {
+  color: #bfdbfe;
+}
+
+html[data-theme='dark'] .surveillance-help-card {
+  border-color: #334155;
+  background-color: #1e293b;
+}
+
+html[data-theme='dark'] .surveillance-help-card__icon {
+  background-color: #111c2e;
+}
+
+html[data-theme='dark'] .surveillance-help-card__title {
+  color: #f1f5f9;
+}
+
+html[data-theme='dark'] .surveillance-help-card__description {
+  color: #cbd5e1;
+}
+
+html[data-theme='dark'] .surveillance-standards-card {
+  background-color: #1e293b !important;
+}
+
+html[data-theme='dark'] .surveillance-standards-card__icon {
+  background-color: #111c2e !important;
+}
+
+html[data-theme='dark'] .post-marriage-page .bg-rose-50 {
+  background-color: #2b2334 !important;
+}
+
+html[data-theme='dark'] .post-marriage-page .bg-rose-100 {
+  background-color: #382536 !important;
+}
+
+html[data-theme='dark'] .post-marriage-focus-section {
+  background-color: #0f1a2b !important;
+}
+
+html[data-theme='dark'] .post-marriage-focus-section > div:first-child {
+  background-color: rgb(244 63 94 / 0.08);
+}
+
+html[data-theme='dark'] .post-marriage-focus-card {
+  border-color: #334155;
+  background-color: #111c2e !important;
+}
+
+html[data-theme='dark'] .post-marriage-focus-card__icon {
+  background-color: #2b2334;
+}
+
+html[data-theme='dark'] .post-marriage-help-card,
+html[data-theme='dark'] .post-marriage-privacy-card {
+  border-color: #334155;
+  background-color: #1e293b !important;
+}
+
+html[data-theme='dark'] .post-marriage-help-card__icon,
+html[data-theme='dark'] .post-marriage-privacy-card__icon {
+  background-color: #111c2e !important;
+}
+
+html[data-theme='dark'] .post-marriage-help-card__title {
+  color: #f1f5f9;
+}
+
+html[data-theme='dark'] .post-marriage-help-card__description {
+  color: #cbd5e1;
+}
+
+html[data-theme='dark'] .loyalty-help-card {
+  border-color: #334155;
+  background-color: #1e293b;
+}
+
+html[data-theme='dark'] .loyalty-help-card__icon {
+  background-color: #111c2e;
+}
+
+html[data-theme='dark'] .loyalty-help-card__title {
+  color: #f1f5f9;
+}
+
+html[data-theme='dark'] .loyalty-help-card__description {
+  color: #cbd5e1;
+}
+
+html[data-theme='dark'] section[class*="from-[#eef5ff]"] {
+  background-image: none !important;
+  background-color: #111c2e !important;
+}
+
+html[data-theme='dark'] .from-blue-100 {
+  --tw-gradient-from: rgb(30 58 95 / 0.75) var(--tw-gradient-from-position) !important;
+}
+
+html[data-theme='dark'] .to-cyan-100,
+html[data-theme='dark'] .to-slate-200 {
+  --tw-gradient-to: rgb(30 58 95 / 0.2) var(--tw-gradient-to-position) !important;
+}
+
+html[data-theme='dark'] .shadow-slate-300\/40 {
+  --tw-shadow-color: rgb(0 0 0 / 0.3) !important;
+}
+
+html[data-theme='dark'] input,
+html[data-theme='dark'] textarea,
+html[data-theme='dark'] select {
+  color-scheme: dark;
+}
+
+html[data-theme='dark'] input::placeholder,
+html[data-theme='dark'] textarea::placeholder {
+  color: #94a3b8;
+}
+
+html[data-theme='dark'] .hover\:bg-slate-50:hover {
+  background-color: #1e293b !important;
+}
+
+html[data-theme='dark'] .hover\:bg-slate-100:hover {
+  background-color: #26364c !important;
+}
+
+html[data-theme='dark'] .hover\:bg-blue-50:hover,
+html[data-theme='dark'] .hover\:bg-blue-50\/50:hover,
+html[data-theme='dark'] .hover\:bg-blue-50\/60:hover,
+html[data-theme='dark'] .hover\:bg-blue-50\/70:hover,
+html[data-theme='dark'] .hover\:bg-blue-50\/80:hover,
+html[data-theme='dark'] .hover\:bg-sky-100:hover {
+  background-color: #1b3555 !important;
+}
